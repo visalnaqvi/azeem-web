@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+main{
+    max-width: 1400px;
+    margin: auto;
+}
+
+:root{
+    --primary-green:#22c55e;
+    --light-yellow:#ffe863;
+    --light-green:#00c981;
+    --dark-green:#00665a;
+    --primary-blue:#2192ff;
+    --primary-blue-light:#e1f2ff;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.body-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+}
+
+.body-wrapper.column{
+    flex-direction: column;
+}
+
+.body-wrapper.items-start{
+    align-items: flex-start;
+}
+
+.body-wrapper.justify-around{
+    justify-content: space-around;
+}
+
+.body-wrapper.justify-start{
+    justify-content: flex-start;
+}
+
+.body-wrapper.justify-between{
+    justify-content: space-between;
+}
+
+.body-wrapper.justify-end{
+    justify-content: flex-end;
+}
+
+.body-wrapper.column.reverse{
+    flex-direction: column-reverse;
+}
+
+.margin{
+    width: 93%;
+    margin: auto;
+}
+
+
+.icon-list-item{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0px 0;
+    font-size: small;
+}
+
+.icon-list-item.bold{
+    font-weight: 600;
+}
+
+.icon-list-item.big{
+    font-size: large;
+}
+
+.icon-list-item.margin{
+    margin: 10px 0;
+}
+
+.icon-list-icon{
+    color: var(--primary-green);
+    font-size: 1.5rem;
+    margin-right: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.primary-btn{
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    border: 2px solid;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-top: 10px;
+    box-shadow: 10px 10px 20px #00000050;
+    cursor: pointer;
+}
+
+.primary-btn.blue{
+    background-color: var(--primary-blue);
+    border-color:var(--primary-blue) ;
+}
+
+.primary-btn.red{
+    background-color: crimson;
+    border-color:crimson ;
+}
+
+.primary-btn.green{
+    background-color:var(--dark-green);
+    border-color:var(--dark-green);
+}
+
+.boldHeading{
+    margin: 50px 0 30px 0;
+    font-size: 2.5rem;
+}
+
+.small{
+    font-size: 1.4rem;
+    margin: 20px 0 10px 0;
+    font-weight: 600;
+}
+
+.center{
+    text-align: center;
+}
+
+.content{
+    line-height: 35px;
+    font-size: 1.1rem;
+    color: #5a5a5a;
+}
+
+.subHeading{
+    font-size: 2.3rem;
+    font-weight: 500;
+    margin: 50px 0 10px 0;
+}
+
+.backgroundImgWrapper{
+    margin: auto;
+    width: 96%;  
+}
+
+.backgroundImg{
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px #00000030;
+}
+
+.greenBox{
+    background-color: var(--light-green);
+    color: #fff;
+    padding: 1px 0;
+    border-radius: 6px;
+}
+
+.delete-icon , .check-icon{
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #dbdbdb;
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 10px;
+    border-radius: 100%;
+    color: crimson;
+}
+
+.check-icon{
+    background-color: var(--light-green);
+    color: #fff;
+}
+
+.delete-icon:hover{
+    background-color: crimson;
+    color: #fff;
+}
+
+.check-icon:hover{
+    background-color: var(--dark-green);
+}
+
+.mainLoading{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 100000;
+    padding: 20px;
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+.cancle-icon{
+    font-size: 4rem;
+    color: #fff;
+    position: absolute;
+    top: 30px;
+    cursor: pointer;
+    right: 60px;
+}
+
+.boldHeading.button{
+    margin-right: 100px;
+}
+
+.higlight{
+    background-color: #ffe863;
+    display:inline-flex;
+    padding: 5px;
+    padding-right: 20px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+@media only screen and (max-width:560px) {
+    .boldHeading.button{
+        margin-bottom: 0;
+    }
+    
+    .contact-button{
+        margin-bottom: 30px;
+    }
+}
