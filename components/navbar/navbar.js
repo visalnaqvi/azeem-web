@@ -1,7 +1,7 @@
 import Image from "next/image"
 import logo from "../../public/logo.png"
 import styles from "./navBar.module.css"
-import { GiHamburgerMenu , GiCancel } from "react-icons/gi"
+import { GiHamburgerMenu, GiCancel } from "react-icons/gi"
 import { useEffect, useState } from "react"
 import { useRouter } from "next/router"
 import Link from "next/link"
@@ -24,7 +24,7 @@ const NavBar = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [navLinks, setNavLinks] = useState({})
     const [user, setUser] = useState({})
-    const [isVisible , setIsVisible] = useState(true);
+    const [isVisible, setIsVisible] = useState(true);
 
     useEffect(() => {
         fetchNavLinks();
@@ -48,7 +48,7 @@ const NavBar = () => {
         }
 
         setIsNew(singlePackageId == "new")
-        if(asPath=="/iraqZiyarat"){
+        if (asPath == "/iraqZiyarat") {
             router.push("/iraq-ziyarat-packages/karbala-iraq-ziyarat")
         }
         switch (asPath) {
@@ -58,7 +58,7 @@ const NavBar = () => {
                 iraqZiyarat: false,
                 holidayPackages: false,
                 karbalaZiyarat: false,
-                forex:false
+                forex: false
             });
                 break;
             case "/umrahPackage": setMenuState({
@@ -67,7 +67,7 @@ const NavBar = () => {
                 iraqZiyarat: false,
                 holidayPackages: false,
                 karbalaZiyarat: false,
-                forex:false
+                forex: false
             });
                 break;
             case "/iraq-ziyarat-packages/iraq-ziyarat": setMenuState({
@@ -76,7 +76,7 @@ const NavBar = () => {
                 iraqZiyarat: true,
                 holidayPackages: false,
                 karbalaZiyarat: false,
-                forex:false
+                forex: false
             });
                 break;
             case "/iraq-ziyarat-packages/karbala-iraq-ziyarat": setMenuState({
@@ -85,7 +85,7 @@ const NavBar = () => {
                 iraqZiyarat: false,
                 holidayPackages: false,
                 karbalaZiyarat: true,
-                forex:false
+                forex: false
             });
                 break;
             case "/holiday-packages": setMenuState({
@@ -94,7 +94,7 @@ const NavBar = () => {
                 iraqZiyarat: false,
                 holidayPackages: true,
                 karbalaZiyarat: false,
-                forex:false
+                forex: false
             });
                 break;
             case "/forex": setMenuState({
@@ -103,7 +103,7 @@ const NavBar = () => {
                 iraqZiyarat: false,
                 holidayPackages: false,
                 karbalaZiyarat: false,
-                forex:true
+                forex: true
             });
                 break;
             default: setMenuState({ home: false, hajjUmrah: false, iraqZiyarat: false, holidayPackages: false })
@@ -118,19 +118,19 @@ const NavBar = () => {
     }
     const size = useWindowSize();
 
-    useEffect(()=>{
-        setIsVisible(size.width>=1040)
-    },[size])
+    useEffect(() => {
+        setIsVisible(size.width >= 1040)
+    }, [size])
     return (
         <div> {isLoading ? <div className="mainLoading"><p>Loading...</p></div> : <div>
             <div className={`${styles.navBar} body-wrapper justify-between`} style={{ flexWrap: "nowrap" }}>
-            <div onClick={()=>{
-                setIsVisible(!isVisible)
-            }} className={styles.hamMenu}>
-            {isVisible ? <GiCancel style={{pointerEvents:"none"}} /> :<GiHamburgerMenu style={{pointerEvents:"none"}} />}
-            </div>
-                <Image src={logo} width={180} height={60} alt="al azeem logo" />
-               <div className={`${styles.mainMenu} ${!isVisible && styles.notVisible}`}>
+                <div onClick={() => {
+                    setIsVisible(!isVisible)
+                }} className={styles.hamMenu}>
+                    {isVisible ? <GiCancel style={{ pointerEvents: "none" }} /> : <GiHamburgerMenu style={{ pointerEvents: "none" }} />}
+                </div>
+                <Image src={logo} width={180} height={60} alt="Shia Kafla logo" />
+                <div className={`${styles.mainMenu} ${!isVisible && styles.notVisible}`}>
                     <ul className="body-wrapper">
                         {
                             navLinks && navLinks.length > 0 && navLinks.map((link, i) => (
@@ -138,14 +138,14 @@ const NavBar = () => {
                             ))
                         }
                         <li className={menuState[`forex`] && styles.active}><Link href={`forex`}>FOREX</Link></li>
-                        
+
                         {/* <li className={`${menuState["hajjUmrah"] && styles.active}`}><Link href="/hajj-and-umrah-packages">Hajj Umrah</Link></li>
                         <li className={`${menuState["iraqZiyarat"] && styles.active}`}><Link href="/iraq-ziyarat-packages/karbala-iraq-ziyarat">Iraq Ziyarat</Link></li>
                         <li className={`${menuState["holidayPackages"] && styles.active}`}><Link href="/holiday-packages">Holiday Packages</Link></li> */}
                     </ul>
                 </div>
                 <div className={`${(user && user.role == 'admin') ? styles.w40 : styles.w20} body-wrapper`}>
-                    
+
                     {user ? <button onClick={() => {
                         localStorage.removeItem("token")
                         router.reload()

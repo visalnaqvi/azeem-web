@@ -37,7 +37,7 @@ const LoginComponent = () => {
                 <div className={`${styles.wrapper}`}>
                     <div className="body-wrapper justify-between" style={{ marginBottom: "10px" }}>
                         <p className={styles.heading}>{isRegister ? "Register" : "Login"}</p>
-                        <Image width={130} height={50} alt="al azeem logo" src={logo}></Image></div>
+                        <Image width={130} height={50} alt="Shia Kafla logo" src={logo}></Image></div>
                     <p className={styles.content}>Unlock exclusive travel deals, personalized recommendations, and more! Sign in now to embark on your next adventure with us. Your dream vacation awaits! Log in today</p>
                     <form>
                         {
