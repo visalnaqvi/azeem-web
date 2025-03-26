@@ -11,7 +11,7 @@ const QuickContacts = () => {
             <Link href="tel:9811042458"><div className={`${styles.icon} ${styles.call} body-wrapper`}>
                 <AiTwotonePhone />
             </div></Link>
-            <Link href="tel:9205184001"><div className={`${styles.icon} ${styles.call} body-wrapper`}>
+            <Link href="tel: 9811047684"><div className={`${styles.icon} ${styles.call} body-wrapper`}>
                 <BsFacebook />
             </div></Link>
         </div>

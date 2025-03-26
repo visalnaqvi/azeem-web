@@ -1,17 +1,17 @@
 import PackageCard from "@/components/cards/packageCard/packageCard.js"
 import background from "../../../public/backgroundImages/iraqZiyaratShia.jpeg"
-import background_mb from "../../../public/backgroundImages/iraqZiyaratShia_mb.png"
+import background_mb from "../../../public/backgroundImages/iraqZiyaratShia_mb.jpeg"
 import ziyarat from "../../../data/shiaZiyarat.js"
 import IconLongList from "@/components/lists/iconLongList.js";
 import Image from "next/image";
 import SingleImage from "@/components/carousel/singleImage";
 
-const ShiaZiyarat = ({iraqPackages , fetchData})=>{
-    return(
+const ShiaZiyarat = ({ iraqPackages, fetchData }) => {
+    return (
         <>
-        
-                <SingleImage url={[background , background_mb]} />
-    
+
+            <SingleImage url={[background, background_mb]} />
+
             <div className="margin">
                 <div className="body-wrapper">
                     {
@@ -70,21 +70,21 @@ const ShiaZiyarat = ({iraqPackages , fetchData})=>{
                 <br></br>
 
                 <div className="body-wrapper items-start justify-around">
-                    <div style={{width:"48%"}}>
+                    <div style={{ width: "48%" }}>
                         <div className="greenBox">
-                        <p className="boldHeading center small">Ziyarat</p>
+                            <p className="boldHeading center small">Ziyarat</p>
                         </div>
                         <IconLongList items={ziyarat[0]} />
                     </div>
-                    <div style={{width:"48%"}}>
-                    <div className="greenBox">
-                    <p className="boldHeading center small">Ziyarat</p>
-                    </div>
+                    <div style={{ width: "48%" }}>
+                        <div className="greenBox">
+                            <p className="boldHeading center small">Ziyarat</p>
+                        </div>
                         <IconLongList items={ziyarat[1]} />
                     </div>
                 </div>
             </div>
-            </>
+        </>
     )
 }
 
