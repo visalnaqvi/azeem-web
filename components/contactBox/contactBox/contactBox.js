@@ -6,7 +6,7 @@ const ContactBox = () => {
             <div className={styles.contactBoxSection}>
                 <h3 style={{ marginTop: 0 }} className="subHeading">Contact Us for more information</h3>
                 <p style={{ color: "white" }} className="content">Planning for Umrah? Book your umrah package with us as we provide the highest-quality Umrah packages from India at amazingly reasonable prices, ensuring that all of your travel needs are met to your satisfaction.</p>
-                <p style={{ color: "white" }} className="content"><strong>Email: shiakafla@gmail.com</strong></p>
+                <p style={{ color: "white" }} className="content"><strong>Email: shiaqafila@gmail.com</strong></p>
                 {/* <button>Request a Callback</button> */}
 
             </div>
