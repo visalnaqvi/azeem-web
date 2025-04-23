@@ -129,7 +129,7 @@ const NavBar = () => {
                 }} className={styles.hamMenu}>
                     {isVisible ? <GiCancel style={{ pointerEvents: "none" }} /> : <GiHamburgerMenu style={{ pointerEvents: "none" }} />}
                 </div>
-                <Image src={logo} width={180} height={60} alt="Shia Kafla logo" />
+                <Image src={logo} width={180} height={60} alt="Shia Qafila logo" />
                 <div className={`${styles.mainMenu} ${!isVisible && styles.notVisible}`}>
                     <ul className="body-wrapper">
                         {

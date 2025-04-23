@@ -2,7 +2,7 @@ const data =
 	[
 		{
 			heading: "Visa Facilitation",
-			content: "Visa Facilitation is a distinguished service at Shia Kafla Hujj , Umrah , Ziyarat. Other than being the preferred visa facilitation service provider in India to countries like Saudi Arabia and Iraq, our patrons trust us with visa & passport application processing services as an end-to-end solution",
+			content: "Visa Facilitation is a distinguished service at Shia Qafila Hujj , Umrah , Ziyarat. Other than being the preferred visa facilitation service provider in India to countries like Saudi Arabia and Iraq, our patrons trust us with visa & passport application processing services as an end-to-end solution",
 			img: "/services/visa.png",
 			direction: ["row", "column"],
 		},
