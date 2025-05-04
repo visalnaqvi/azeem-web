@@ -28,14 +28,17 @@ export const getUmrahPackages = async () => {
 
 export const getIraqPackages = async (type) => {
     try {
-        const q = type == "all" ? query(iraqPackagesCollection, orderBy("order")) : query(iraqPackagesCollection, where("type", "==", type));
+        const q = query(iraqPackagesCollection, orderBy("order"));
 
         const iraqSnapshot = await getDocs(q);
 
         let iraqPackages = []
-
+        console.log("snap shot", iraqSnapshot)
         iraqSnapshot.forEach(doc => {
-            iraqPackages.push(doc.data());
+            console.log("doc", doc.data())
+            if (doc.data().type && doc.data().type == type) {
+                iraqPackages.push(doc.data());
+            }
         })
 
 
@@ -81,9 +84,9 @@ export const getHolidayPackages = async (city) => {
 
 }
 
-export const getPageDocument = async ()=>{
+export const getPageDocument = async () => {
     try {
-        const q = query(collection(db,"page_titles"));
+        const q = query(collection(db, "page_titles"));
         const docs = await getDocs(q);
         let data = [];
         docs.forEach(doc => data.push(doc.data()));
