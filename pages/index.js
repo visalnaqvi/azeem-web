@@ -34,7 +34,7 @@ export default function Home() {
       <div className="margin">
         <div className="body-wrapper justify-between">
           <h2 className="subHeading">Our foundation</h2>
-          <a className="contact-button" href="tel:+919811136987"><button className="primary-btn blue">Contact Us On: +919811136987</button></a>
+          <a className="contact-button" href="tel:+919811042458"><button className="primary-btn blue">Contact Us On: +919811042458</button></a>
         </div>
         <p className="content">We present before you Shia Qafila Hajj , Umrah , Ziyarat as one stop platform for all your travel needs.With a focus on customer service, at Shia Qafila Hajj , Umrah , Ziyarat we offer a fantastic range of trips to meet your budget , ambitions and expectations. All of us here in the Shia Qafila team, work tirelessly to ensure that your trip is carefree, successful and enjoyable experience from start to finish. That means attention to your travel plans, accommodation, specialist inclusions and leisure time as well as to health and safety, financial protection and travel insurance.Specialist knowledge and experience is only half of the story. What distinguishes ous is our passion for the trips we organise, for the destinations that we feature. We feature trips around the worldand our latest inclusion is tour to Saudi Arabia.</p>
 
@@ -58,8 +58,7 @@ export default function Home() {
       </div>
 
       <h2 className="subHeading center">Visit Us</h2>
-      <p className="content center"><strong style={{ color: "#000" }}>Laxmi Nagar Branch:</strong> 1/53, Ist Floor, Lalita Park, Laxmi Nagar, Delhi-92</p>
-      <p className="content center"><strong style={{ color: "#000" }}>Okhla Branch:</strong> 334E, 3rd Floor, Batla House Chowk, Jamia Nagar, Okhla, Upper Rajdhani Medical Store, New Delhi, Delhi-110025</p>
+      <p className="content center"><strong style={{ color: "#000" }}>Address :</strong>1/56 D Basement Lalita Park Laxmi Nagar Delhi 92</p>
       <Map />
       <br></br>
     </div>

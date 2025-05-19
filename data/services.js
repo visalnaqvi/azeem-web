@@ -3,13 +3,13 @@ const data =
 		{
 			heading: "Visa Facilitation",
 			content: "Visa Facilitation is a distinguished service at Shia Qafila Hajj , Umrah , Ziyarat. Other than being the preferred visa facilitation service provider in India to countries like Saudi Arabia and Iraq, our patrons trust us with visa & passport application processing services as an end-to-end solution",
-			img: "/services/visa.png",
+			img: "/services/visa.jpeg",
 			direction: ["row", "column"],
 		},
 		{
 			heading: "Passport assistance",
 			content: "We will take care of all your passport processing. Let us make it easy and efficient for you. So you can enjoy your vacation to the best.",
-			img: "/services/passport.png",
+			img: "/services/passport.jpeg",
 			direction: ["row-reverse", "column"],
 		},
 		{
@@ -21,7 +21,7 @@ const data =
 		{
 			heading: "Air Ticketing",
 			content: "We will take care of all your tickets and travelling. Let it be an international vacation or a domestic one. All travelling tickets and costs are inculded in your packages",
-			img: "/services/ticket.png",
+			img: "/services/ticket.jpeg",
 			direction: ["row-reverse", "column"],
 		}
 	]
