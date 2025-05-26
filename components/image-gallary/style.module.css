@@ -1,0 +1,40 @@
+.cardWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card{
+    max-width: 300px;
+    width: 100%;
+    margin: 30px;
+}
+
+.button{
+    width: 100%;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.warning{
+    background-color: crimson;
+}
+
+.info{
+    background-color: var(--primary-blue);
+    color: #ffffff;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    font-size: 24px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.reload{
+    width: 200px;
+}

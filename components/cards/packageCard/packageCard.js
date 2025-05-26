@@ -3,59 +3,72 @@ import IconList from "../../lists/iconList";
 import styles from "./packageCard.module.css"
 import { useEffect, useState } from "react";
 import { getPackageVendor } from "@/services/vendor";
-import {AiFillDelete , AiFillEdit} from "react-icons/ai"
+import { AiFillDelete, AiFillEdit } from "react-icons/ai"
 import Link from "next/link";
 import { checkStorageForAdminToken } from "@/services/auth";
 import { deletePackage } from "@/services/deleteData";
+import Image from "next/image";
 
-const PackageCard = ({tour , type , subType , fetchData}) => {
+const PackageCard = ({ tour, type, subType, fetchData }) => {
 
-    const [isFlightsOpen , setIsFlightsOpen] = useState(false)
-    const [vendors , setVendors] = useState({title:""})
-    const [vendorString , setVendorString] = useState("No Vendor")
-    const [isAdmin , setIsAdmin] = useState(false);
+    const [isFlightsOpen, setIsFlightsOpen] = useState(false)
+    const [vendors, setVendors] = useState({ title: "" })
+    const [vendorString, setVendorString] = useState("No Vendor")
+    const [isAdmin, setIsAdmin] = useState(false);
 
-    useEffect(()=>{
+    useEffect(() => {
         setIsAdmin(checkStorageForAdminToken());
         fetchVendors();
-    },[])
+    }, [])
 
-    const fetchVendors = async()=>{
+    const fetchVendors = async () => {
         setVendors(await getPackageVendor(tour.id))
     }
 
-    useEffect(()=>{
-        if(vendors.length>0){
+    useEffect(() => {
+        if (vendors.length > 0) {
             let vendorString = "";
-            vendors.forEach(ven=>{vendorString = vendorString+ven.title+" , "});
+            vendors.forEach(ven => { vendorString = vendorString + ven.title + " , " });
             setVendorString(vendorString)
         }
-    },[vendors])
- 
+    }, [vendors])
+
     return (
-       
+
         <div className={`${styles.card}  ${styles[type]} ${styles[subType]}`}>
-           
-           {isAdmin && <div className={`${styles.quickEditBar} body-wrapper`}>
+
+            {isAdmin && <div className={`${styles.quickEditBar} body-wrapper`}>
                 <div className={styles.vendorList}>
-               {vendorString && <p style={{cursor:"pointer"}} title={vendorString}>View Vendors</p>}
-               </div>
-               <div className={`${styles.iconBox} body-wrapper`}>
-                <Link href={`/admin-panel/${type}/${tour.id}`}> <div className={`${styles.icon} ${styles.editIcon}`}><AiFillEdit style={{pointerEvents:"none"}}/></div></Link>
-                <div onClick={async ()=>{
-                    if(window.confirm("pkka delte krna hai?")){
-                        await deletePackage(tour.id , type)
-                        fetchData()
-                    }
-                }} className={`${styles.icon} ${styles.deleteIcon}`}><AiFillDelete style={{pointerEvents:"none"}}/></div>
-               </div>
+                    {vendorString && <p style={{ cursor: "pointer" }} title={vendorString}>View Vendors</p>}
+                </div>
+                <div className={`${styles.iconBox} body-wrapper`}>
+                    <Link href={`/admin-panel/${type}/${tour.id}`}> <div className={`${styles.icon} ${styles.editIcon}`}><AiFillEdit style={{ pointerEvents: "none" }} /></div></Link>
+                    <div onClick={async () => {
+                        if (window.confirm("pkka delte krna hai?")) {
+                            await deletePackage(tour.id, type)
+                            fetchData()
+                        }
+                    }} className={`${styles.icon} ${styles.deleteIcon}`}><AiFillDelete style={{ pointerEvents: "none" }} /></div>
+                </div>
             </div>}
             <div className={styles.content}>
                 <h2>{tour.title}</h2>
                 <h3 className={styles.callToActionYellow}>Departure: {tour.date}</h3>
-                <IconList items={tour.features} isBold={tour.isBold} />
+                <div className={styles.contentWrapper}>
+                    <IconList items={tour.features} isBold={tour.isBold} />
+                    {tour?.maulana?.image && tour?.maulana?.image.length > 0 && tour?.maulana?.position == "top" && <div className={styles.maulana}>
+                        <Image src={tour?.maulana?.image} width={200} height={200} alt="maulana" />
+                        <div className={styles.maulanaName}><p>{tour?.maulana?.name}</p></div>
+                    </div>
+                    }
+                </div>
             </div>
-           {tour.hotels.length != 0 && <div className={styles.beforeFooter}>
+            {tour?.maulana?.image && tour?.maulana?.image.length > 0 && tour?.maulana?.position == "bottom" && <div className={`${styles.beforeFooter} ${styles.maulana}`}>
+                <div className={styles.maulanaName}><p>{tour?.maulana?.name}</p></div>
+                <Image src={tour?.maulana?.image} width={300} height={300} alt="maulana" />
+            </div>
+            }
+            {tour.hotels.length != 0 && <div className={styles.beforeFooter}>
                 <div className={styles.beforeFooterSection}>
                     <p className={styles.beforeHeaderSectionHeading}>Makkah Hotel</p>
                     <p className={styles.beforeHeaderSectionContent}>{tour.hotels[0]}</p>
@@ -67,15 +80,15 @@ const PackageCard = ({tour , type , subType , fetchData}) => {
             </div>}
             <div className={styles.footer}>
                 <p className={styles.footertext}>At Just Rs. {tour.price}/-</p>
-                <button onClick={()=>{
-                    if(tour.flights?.length > 0){
+                <button onClick={() => {
+                    if (tour.flights?.length > 0) {
                         setIsFlightsOpen(true);
                     }
                 }} className={styles.footerButton}>View Flight</button>
             </div>
             {isFlightsOpen && <FlightPopUp setIsFlightsOpen={setIsFlightsOpen} details={tour.flights} />}
         </div>
-       
+
     )
 }
 
