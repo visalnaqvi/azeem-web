@@ -41,7 +41,7 @@ const AdminPanel = () => {
                         <AdminPanelCard key={i} card={card} />
                     ))
                 }
-                <AdminPanelCard packageid={"image-gallary"} card={{ title: "Images", link: "/image-gallary" }} />
+                <AdminPanelCard packageid={"image-gallary"} card={{ title: "Gallary", link: "/image-gallary" }} />
             </div>
             <br></br>
         </div>
