@@ -2,13 +2,27 @@
     min-width: 300px;
     max-width: 600px;
     width: 100%;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     overflow:hidden;
     box-shadow: 10px 10px 30px #00000030;
-    margin: 10px auto;
+    /* margin: 10px auto; */
     position: relative;
 }
 
+.headerContent{
+    width: 100%;
+}
+
+.headerWrapper{
+    position:relative;
+    min-width: 300px;
+    max-width: 600px;
+    width: 100%;
+    /* margin: 10px auto; */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
 .card .content{
     padding: 20px;
     background-position: bottom right;
@@ -16,14 +30,13 @@
     background-size: contain;
 }
 
-.card .maulanaName{
-    background-color: var(--light-green);
-    text-align: center;
-    border-radius: 10px;
+.maulanaName{
+    width: 100%;
+    background-color: #ffe863;
     font-weight: 600;
     font-size: 23px;
     padding: 4px 10px;
-    color: #ffffff;
+    text-transform: capitalize;
 }
 
 .card .contentWrapper{
@@ -32,15 +45,7 @@
     align-items: center;
 }
 
-.card .maulana{
-    margin-right: 20px;
-    margin-bottom: 30px;
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+
 
 .beforeFooter.maulana{
     flex-direction: row;
@@ -60,9 +65,8 @@
 }
 
 
-.card .maulana img{
-    box-shadow: 10px 10px 30px 10px #00000030;
-    border-radius: 100%;
+.maulanaImage img{
+
 }
 .beforeFooter.maulana img{
     border-radius: 0;
@@ -95,11 +99,11 @@
 }
 
 .beforeFooter{
-    background-color: #ffe863;
+    background-color: var(--light-green);
     display: flex;
     align-items: flex-start;
     padding: 10px 20px;
-    /* color: #fff; */
+    color: #fff;
     /* min-height: 95px; */
 }
 .beforeFooter.maulana{
@@ -173,3 +177,8 @@
     cursor: pointer;
 }
 
+@media only screen and (max-width:430px){
+    .maulanaName{
+        font-size: 17px;
+    }
+}
