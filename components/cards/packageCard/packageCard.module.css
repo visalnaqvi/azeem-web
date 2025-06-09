@@ -21,7 +21,9 @@
     /* margin: 10px auto; */
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: flex-start;
+    /* border: 1px solid #dbdbdb; */
+    /* background-color: #1da22130; */
 }
 .card .content{
     padding: 20px;
@@ -31,19 +33,15 @@
 }
 
 .maulanaName{
-    width: 100%;
+    width: 98%;
     background-color: #ffe863;
     font-weight: 600;
-    font-size: 23px;
+    font-size: 20px;
     padding: 4px 10px;
     text-transform: capitalize;
+    margin-top: 10px;
 }
 
-.card .contentWrapper{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
 
 
@@ -65,9 +63,6 @@
 }
 
 
-.maulanaImage img{
-
-}
 .beforeFooter.maulana img{
     border-radius: 0;
 }
