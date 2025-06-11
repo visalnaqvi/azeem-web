@@ -172,8 +172,29 @@
     cursor: pointer;
 }
 
+.maulanaImageMobile{
+    display: none;
+}
+
+@media only screen and (max-width:610px){
+    .maulanaImageMobile{
+        display: block;
+    }
+
+    .maulanaImageDesktop{
+        display: none;
+    }
+
+    .maulana{
+        display: flex;
+        background-color: #ffe863;
+        margin-top: 10px;
+    }
+}
+
 @media only screen and (max-width:430px){
     .maulanaName{
         font-size: 17px;
     }
 }
+
