@@ -65,7 +65,7 @@ const PackageCard = ({ tour, type, subType, fetchData }) => {
                                     <div className={styles.maulanaName}>{tour?.maulana?.name.split('`').map((line, index) => (
                                         <p key={index}>{line.trim()}</p>
                                     ))}</div>
-                                    <Image className={styles.maulanaImageMobile} src={tour?.maulana?.image} width={150} height={150} alt="maulana" />
+                                    <Image className={styles.maulanaImageMobile} src={tour?.maulana?.image} width={100} height={100} alt="maulana" />
                                 </div>
                             }
                             <h3 className={styles.callToActionYellow}>Departure: {tour.date}</h3>
