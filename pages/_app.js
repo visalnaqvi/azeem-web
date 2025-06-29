@@ -3,17 +3,21 @@ import "../styles/globals.css"
 import QuickContacts from "@/components/contactBox/quickContact/quickContact"
 import ContactBox from "@/components/contactBox/contactBox/contactBox"
 import { SessionProvider } from "next-auth/react"
-
+import Map from "../components/map/map.js"
 const noAuthRoutes = ['/welcome', '/newLogin', '/register'];
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <SessionProvider session={session}>
-    <NavBar />
-    <main>
-      <Component {...pageProps} />
-    </main>
-    <ContactBox />
-    <QuickContacts />
+      <NavBar />
+      <main>
+        <Component {...pageProps} />
+      </main>
+
+      <Map />
+      <br />
+      <br />
+      <ContactBox />
+      <QuickContacts />
     </SessionProvider>
   )
 }

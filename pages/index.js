@@ -25,6 +25,62 @@ export default function Home() {
     <div>
       <Head>
         <title>Shia Qafila Hajj , Umrah , Ziyarat | Home</title>
+        <meta name="keywords" content="Shia Qafila umrah Package, 
+Umrah package from Delhi ,
+Umrah package from Lucknow,
+Umrah package from Prayagraj, 
+Best umrah package,
+Cheapest umrah package,
+Umrah package Shia muslims,
+Iran Iraq syria Ziyarat package,
+Iraq Iran ziyarat package from Delhi, 
+Iran Iraq Ziyarat package from Lucknow, 
+Iran Iraq Ziyarat package from Prayagraj,
+Iran Iraq Syria Ziyarat Package for Shia Muslim,
+Shia Iran Iraq Syria Ziyarat Package ,
+Best Iraq Iraq Ziyarat package,Iraq Ziyarat,
+Iraq Ziarat,
+Iraq Ziyarat Travel Agent,
+Iraq Ziyarat Packages,
+Iraq Ziyarat Places,
+Iraq Ziyarat Visa for India,
+Iraq Ziyarat Packages From India,
+Iraq Ziyarat Packages from Delhi,
+Iran Iraq Ziyarat Package,
+Syria Ziyarat package,
+Iraq ziyarat Packages from Delhi,
+Iraq Ziarat Package from Delhi,
+Iran Iraq Ziarat Package from Delhi,
+Shaikh Abdul Qadir Jilani (RA) Ziyarat,
+Ziyarat Ghous E Azam,
+Imam Hussain Roza,
+Imam Hussain shrine Ziyarat,
+Best Ziyarat Package,
+Best Tour Operator,
+Ziyarat kafila from Delhi,
+Iraq Ziyarat packages from Lucknow,
+Iraq Ziyarat Package from Jammu and Srinagar,
+Iraq Ziyarat package from Jaipur,
+Iraq Ziyarat package from Kolkata,
+Iraq Ziyarat package from Punjab,
+iraq ziyarat packages,
+iraq ziyarat tours,
+ziyarat iraq package,
+baghdad ziyarat,
+iran iraq ziyarat packages from india,
+umrah and karbala package,
+baghdad sharif and umrah package,
+iraq ziarat packages,
+ziyarat trips to iraq,
+umrah with iraq ziyarat tour packages,
+iran iraq ziyarat tour,
+iran iraq ziyarat,
+iraq ziyarat tours from india,
+umrah karbala package,
+karbala group,
+karbala ziyarat,
+karbala group package,
+arbaeen package"></meta>
       </Head>
       {
         size.width > 700 ?
@@ -57,9 +113,7 @@ export default function Home() {
         }
       </div>
 
-      <h2 className="subHeading center">Visit Us</h2>
-      <p className="content center"><strong style={{ color: "#000" }}>Address :</strong>1/56 D Basement Lalita Park Laxmi Nagar Delhi 92</p>
-      <Map />
+
       <br></br>
     </div>
   )
