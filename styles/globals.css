@@ -250,3 +250,16 @@ a{
         margin-bottom: 30px;
     }
 }
+
+
+.clipboard-box{
+    padding: 20px;
+    background-color: #252525;
+}
+
+.clipboard-background{
+    background-color: #252525;
+    color: #ffffff;
+    min-height: 100vh;
+    min-width: 100vw;
+}

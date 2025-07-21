@@ -4,35 +4,44 @@ import QuickContacts from "@/components/contactBox/quickContact/quickContact"
 import ContactBox from "@/components/contactBox/contactBox/contactBox"
 import { SessionProvider } from "next-auth/react"
 import Map from "../components/map/map.js"
+import { useRouter } from "next/router"
+
 const noAuthRoutes = ['/welcome', '/newLogin', '/register'];
+
 function MyApp({ Component, pageProps: { session, ...pageProps } }) {
+  const router = useRouter();
+  const currentPath = router.pathname;
+
+  const hideUI = currentPath === '/clipboard';
+
   return (
     <SessionProvider session={session}>
-      <NavBar />
-      <main>
+      {!hideUI && <NavBar />}
+      {!hideUI ? <main>
         <Component {...pageProps} />
-      </main>
-
-      <Map />
-      <br />
-      <br />
-      <ContactBox />
-      <QuickContacts />
+      </main> : <Component {...pageProps} />}
+      {!hideUI && (
+        <>
+          <Map />
+          <br />
+          <br />
+          <ContactBox />
+          <QuickContacts />
+        </>
+      )}
     </SessionProvider>
   )
 }
 
 MyApp.getInitialProps = async ({ Component, ctx }) => {
-  // Determine if authentication is required based on the page's path
   const { asPath } = ctx;
-
   const isAuthRequired = !noAuthRoutes.includes(asPath);
 
-  // Call the page's `getInitialProps` function if it exists
   const pageProps = Component.getInitialProps
     ? await Component.getInitialProps(ctx)
     : {};
 
   return { pageProps, isAuthRequired };
 };
-export default MyApp
+
+export default MyApp;

@@ -1,5 +1,5 @@
 import db from "../config/firebase.js"
-import { getDocs, orderBy, query, getDoc, doc, where, collection } from "firebase/firestore";
+import { getDocs, orderBy, query, getDoc, doc, where, collection, onSnapshot } from "firebase/firestore";
 import { navCollection, umrahPackagesCollection, iraqPackagesCollection, holidayPackagesCollection } from "@/config/collections.js";
 import { getAllVendorsList } from "./vendor.js";
 import dotenv from "dotenv"
@@ -83,6 +83,25 @@ export const getHolidayPackages = async (city) => {
     }
 
 }
+
+export const listenToClipboard = (onUpdate, onError) => {
+    try {
+        const q = query(collection(db, "clipboard"), orderBy("timestamp", "desc"));
+
+        const unsubscribe = onSnapshot(q, (snapshot) => {
+            const clipboard = snapshot.docs.map(doc => doc.data());
+            onUpdate(clipboard);
+        }, (error) => {
+            console.error("Snapshot error:", error);
+            if (onError) onError(error);
+        });
+
+        return unsubscribe; // to stop listening later if needed
+    } catch (err) {
+        console.error("Error setting up listener:", err);
+        if (onError) onError(err);
+    }
+};
 
 export const getPageDocument = async () => {
     try {
